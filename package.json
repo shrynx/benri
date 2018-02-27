@@ -1,0 +1,89 @@
+{
+  "name": "benri",
+  "version": "0.0.0-alpha-0",
+  "description": "functional utility library for javascript",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "jsnext:main": "dist/es/index.js",
+  "browser": "dist/umd/index.min.js",
+  "unpkg": "dist/umd/index.min.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "fp",
+    "functional programming",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shrynx/benri.git"
+  },
+  "author": "Shriyans Bhatnagar <shriyansbhatnagar@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+		"lint": "eslint '+(src|benchmarks|tests|scripts)/**/*.js'",
+    "format": "prettier-eslint --write '+(src|benchmarks|tests|scripts)/**/*.js' '*.md'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "benchmark": "npm run build && node scripts/benchmark",
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c",
+		"commit": "git-cz",
+		"prepublish": "npm run test && npm run build"
+  },
+  "sideEffects": false,
+  "lint-staged": {
+    "+(src|benchmarks|tests|scripts)/**/*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ],
+		"*.md": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+	},
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test && lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-plugin-codegen": "^1.2.1",
+    "benchmark": "^2.1.4",
+    "chalk": "^2.3.1",
+    "commitizen": "^2.9.6",
+    "cross-spawn": "^6.0.4",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.12.2",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.15.0-rc.8",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.0",
+    "lodash": "^4.17.5",
+    "prettier": "^1.11.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "ramda": "^0.25.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.56.3",
+    "rollup-plugin-babel": "^4.0.0-beta.0",
+    "rollup-plugin-babel-minify": "^4.0.0"
+  }
+}

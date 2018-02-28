@@ -9,5 +9,5 @@ module.exports = fs
   .filter(file => path.extname(file) === '.js')
   .map(file => path.parse(file).name)
   .filter(filename => filename !== 'index')
-  .map(filename => `export { default as ${filename}} from './${filename}';`)
+  .map(filename => `export { default as ${filename} } from './${filename}'`)
   .join('\n')

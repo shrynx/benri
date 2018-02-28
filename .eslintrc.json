@@ -1,22 +1,20 @@
 {
-	"extends": ["standard", "prettier", "prettier/standard", "plugin:jest/recommended"],
-	"parserOptions": {
-		"ecmaVersion": 2017,
-		"sourceType": "module"
-	},
-	"parser": "babel-eslint",
-	"plugins": [
-    "prettier"
-  ],
-	"rules": {
-		"prettier/prettier": [
-			"error",
-			{
-				"printWidth": 100,
-				"semi": false,
-				"singleQuote": true,
-				"trailingComma": "es5"
-			}
-		]
-	}
+  "extends": ["standard", "prettier", "prettier/standard", "plugin:jest/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100,
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ]
+  }
 }

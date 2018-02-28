@@ -5,7 +5,7 @@ describe('aperture', () => {
   const count = 2
   const result = [[1, 2], [2, 3], [3, 4], [4, 5]]
 
-  const outOfBound = array.length + 1
+  const outOfBound = array.length + 2
 
   test('should work on array', () => {
     expect(aperture(count, array)).toEqual(result)

@@ -20,4 +20,16 @@ describe('concat', () => {
   test('should work on string', () => {
     expect(concat(str1)(str2)).toEqual(resultStr)
   })
+
+  test('should throw error if array concats string', () => {
+    expect(() => concat(arr1)(str2)).toThrowError(TypeError)
+  })
+
+  test('should throw error if string concats array', () => {
+    expect(() => concat(str1)(arr2)).toThrowError(TypeError)
+  })
+
+  test('should throw error if value if neither string nor array', () => {
+    expect(() => concat(1)(2)).toThrowError(TypeError)
+  })
 })

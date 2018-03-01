@@ -13,7 +13,7 @@ describe('map', () => {
   const double = x => x * 2
 
   test('simple array', () => {
-    expect(map(square)(array)).toEqual(result)
+    expect(map(square, array)).toEqual(result)
   })
 
   test('can be curried', () => {

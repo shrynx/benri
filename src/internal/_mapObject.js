@@ -3,7 +3,7 @@ function _mapObject(iteratee, object) {
   var result = {}
 
   Object.keys(object).forEach(key => {
-    result[key] = iteratee(object[key], key, object)
+    result[key] = iteratee(object[key])
   })
   return result
 }

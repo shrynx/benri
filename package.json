@@ -31,11 +31,12 @@
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c",
 		"commit": "git-cz",
-		"prepublish": "npm run test && npm run build"
+		"prepublishOnly": "npm run test && npm run build"
   },
   "sideEffects": false,
   "lint-staged": {
     "+(src|benchmarks|tests|scripts)/**/*.js": [
+      "eslint",
       "prettier-eslint --write",
       "git add"
     ],
@@ -51,7 +52,7 @@
 	},
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test && lint-staged"
+      "pre-commit": "npm run test && lint-staged"
     }
   },
   "devDependencies": {

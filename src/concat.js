@@ -1,12 +1,11 @@
 import _curry2 from './internal/_curry2'
-import _concat from './internal/_concat'
 import _isArray from './internal/_isArray'
 import _isString from './internal/_isString'
 
 function concat(a, b) {
   if (_isArray(a)) {
     if (_isArray(b)) {
-      return _concat(a, b)
+      return a.concat(b)
     }
     throw new TypeError(b + ' is not an array')
   }

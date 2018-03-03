@@ -1,6 +1,6 @@
 const jestConfig = {
   collectCoverage: true,
-  collectCoverageFrom: ['src/*.js', '!src/index.js'],
+  collectCoverageFrom: ['src/*.js'],
 }
 
 module.exports = jestConfig

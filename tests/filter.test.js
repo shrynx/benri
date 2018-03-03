@@ -1,4 +1,4 @@
-import filter from '../src/filter'
+import { filter } from '../src'
 
 describe('filter', () => {
   const array = [1, 2, 3, 4, 5, 6]
